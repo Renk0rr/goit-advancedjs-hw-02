@@ -1,94 +1,160 @@
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 360px);
-  gap: 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-  padding-top: 24px;
-}
-
-.gallery-item {
-  position: relative;
-  width: 360px;
-  height: 200px;
-  overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gallery-item:hover {
-  transform: scale(1.044);
-  z-index: 1000;
-}
-
-.gallery-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: zoom-in;
-}
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 408px;
-  margin: 40px auto;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
   padding: 24px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.feedback-form label {
+.nav-link {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  margin-right: 32px;
+  color: #4e75ff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  margin-right: 32px;
+  color: #4e75ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Timer styles */
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+input#datetime-picker {
+  width: 312px;
+  max-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input#datetime-picker:hover {
+  border-color: #000;
+}
+
+button[data-start] {
+  height: 40px;
+  padding: 8px 16px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[data-start]:disabled {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+
+button[data-start]:hover:not(:disabled) {
+  background-color: #6c8cff;
+}
+
+.timer {
+  display: flex;
+  gap: 12px;
+}
+
+.field {
+  width: 72px;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background-color: rgb(235, 236, 237);
+  border-radius: 12px;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #2e2f42;
+  margin-bottom: 4px;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #2e2f42;
+}
+
+/* Snackbar styles */
+
+.form {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px; 
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 16px;
-  line-height: 1.5;
-  color: #2e2f42;
-  text-align: left;
+  gap: 24px;
+  width: 300px;
 }
 
-.feedback-input,
-.feedback-textarea {
-  width: 100%; 
-  box-sizing: border-box;
-  padding: 8px 16px;
+.form label {
+  display: flex;
+  flex-direction: column;
   font-size: 16px;
-  border: 1px solid #808080;
-  border-radius: 4px;
+  gap: 8px;
+}
+
+.delay-input {
+  padding: 8px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  font-size: 16px;
   outline: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.3s;
 }
 
-.feedback-input:focus,
-.feedback-textarea:focus {
-  border-color: #4e75ff;
+fieldset {
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  gap: 32px;
 }
 
-.feedback-textarea {
-  min-height: 80px;
-  resize: none;
+fieldset .radio-item {
+  display: inline-block;
+  margin: 8px;
 }
 
-.feedback-button {
-  width: 100%; 
-  padding: 8px 16px;
-  font-size: 16px;
-  font-weight: 500;
+fieldset .radio-item input {
+  margin-right: 8px;
+}
+
+button[type='submit'] {
+  padding: 12px;
   background-color: #4e75ff;
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 8px; 
 }
 
-.feedback-button:hover {
+button[type='submit']:hover {
   background-color: #6c8cff;
 }
+
